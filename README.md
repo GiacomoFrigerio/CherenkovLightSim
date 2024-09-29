@@ -13,7 +13,7 @@ Particles used: proton (proton), electron (e-)
 
 Output is saved on a Root file with Event, fX, fY, fZ and fX:fY to reconstruct the radius of the Cherenkov cone. 
 
-The result expected are that if the material has an increasing refractive index the CHerenkov cone should increase its radius.
+The results expected are that if the material has an increasing refractive index, the CHerenkov cone should increase its radius.
 
 To start the code, download the files and create a build folder.
 Then, inside the folder, do "cmake .." , then "make" and then "./NAME" where NAME is the folder of the code (in this case, sim).
