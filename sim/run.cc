@@ -1,0 +1,51 @@
+#include "run.hh"
+
+
+MyRunAction::MyRunAction()
+{
+    G4AnalysisManager *man = G4AnalysisManager::Instance();
+    
+    man->CreateNtuple("Hits", "Hits"); //rows
+    man->CreateNtupleIColumn("fEvent");  //integer columns
+    man->CreateNtupleDColumn("fX"); //pos of detector
+    man->CreateNtupleDColumn("fY");
+    man->CreateNtupleDColumn("fZ"); 
+    man->CreateNtupleDColumn("fX:fY"); 
+    man->FinishNtuple(0);     
+}
+MyRunAction::~MyRunAction()
+{}
+
+void MyRunAction::BeginOfRunAction(const G4Run* run)
+{
+//we have to understand in the beginning which kind of information we want to save
+    G4AnalysisManager *man = G4AnalysisManager::Instance();
+    
+    G4int runID = run->GetRunID();
+    
+    std::stringstream strRunID;
+    strRunID << runID;
+
+    man->OpenFile("output"+strRunID.str()+".root"); 
+    
+}
+
+void MyRunAction::EndOfRunAction(const G4Run*)
+{
+    G4AnalysisManager *man = G4AnalysisManager::Instance();
+    
+    //before closing we have to write it out
+    man->Write();
+    man->CloseFile("output.root"); 
+}
+
+
+
+
+
+
+
+
+
+
+
