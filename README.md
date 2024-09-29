@@ -16,6 +16,9 @@ Output is saved on a Root file with Event, fX, fY, fZ and fX:fY to reconstruct t
 The result expected are that if the material has an increasing refractive index the CHerenkov cone should increase its radius.
 
 To start the code, download the files and create a build folder.
-Then, inside the folder, do "cmake .." , then "make" and then "./NAME" where NAME is the folder of the code (in this case, SIM).
+Then, inside the folder, do "cmake .." , then "make" and then "./NAME" where NAME is the folder of the code (in this case, CherenkovSIM).
 
 The output is saved on a ROOT file. 
+
+
+Project bibliography: https://www.youtube.com/playlist?list=PLLybgCU6QCGWgzNYOV0SKen9vqg4KXeVL . 
